@@ -1,8 +1,7 @@
 This [Redmine](http://www.redmine.org) 4 plugin stores file attachments on [Amazon S3](http://aws.amazon.com/s3) instead of the local filesystem.
 
-!!! Actually, I don't like this solution, but it works for me and it was fast implementation ...
-
--> Much more I would appreciate if Redmine switch to Active Storage which is part of Rails and works like a charm for locals storage end even for cloud storages.
+This is based on monkey-patching Redmine's code. Keep an eye on https://www.redmine.org/issues/33188 for
+the upstream issue about migration to ActiveStorage.
 
 ## Installation instructions
 
@@ -19,6 +18,11 @@ delete the .git directory of the plugin and commit it to your favorite version c
 
 ## Attributions and license
 
-This project is a fork of https://github.com/x3ro/redmine_amazon_s3 which, in turn, was forked from the [ka8725/redmine_s3](https://github.com/ka8725/redmine_s3) which, in turn, was forked from the [original gem](http://github.com/tigrish/redmine_s3).
+This project is a fork of https://github.com/jhovad/redmine4_amazon_s3,
+which is a fork of https://github.com/x3ro/redmine_amazon_s3,
+which is a fork of https://github.com/ka8725/redmine_s3,
+which is a fork of http://github.com/tigrish/redmine_s3.
+
+The forks must continue.
 
 See the `LICENSE` file.
