@@ -12,8 +12,10 @@ module AmazonS3
           :access_key_id => @@config.access_key_id,
           :secret_access_key => @@config.secret_access_key,
           :region => @@config.region,
-          :endpoint => @@config.endpoint
         }
+        if !@@config.endpoint.empty? and !@@config.endpoint.nil?
+          options[:endpoint] = @@config.endpoint
+        end
 
         @client = Aws::S3::Client.new(options)
       end
