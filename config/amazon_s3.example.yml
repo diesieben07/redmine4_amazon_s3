@@ -19,6 +19,9 @@ production:
   # Folder where attachment thumbnails are stored
   # thumbnails_folder: thumbnails/
 
+  # endpoint: "https://s3.eu-central-1.wasabisys.com"
+  # presigned_url_expiry: 3600
+
 development:
   # Copy configuration from `production` if desired
 

@@ -11,7 +11,8 @@ module AmazonS3
         options = {
           :access_key_id => @@config.access_key_id,
           :secret_access_key => @@config.secret_access_key,
-          :region => @@config.region
+          :region => @@config.region,
+          :endpoint => @@config.endpoint
         }
 
         @client = Aws::S3::Client.new(options)
@@ -46,7 +47,11 @@ module AmazonS3
 
       def object_url(filename, target_folder = @@config.attachments_folder)
         object = self.object(filename, target_folder)
-        object.public_url
+        if @@config.presigned_url_expiry
+          object.presigned_url(:get, :expires_in => presigned_url_expiry)
+        else
+          object.public_url
+        end
       end
 
       def get(filename, target_folder = @@config.attachments_folder)

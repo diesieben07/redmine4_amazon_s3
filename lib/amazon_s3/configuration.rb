@@ -23,6 +23,8 @@ module AmazonS3
         :region             => nil,
         :attachments_folder => nil,
         :thumbnails_folder  => nil,
+        :endpoint => nil,
+        :presigned_url_expiry => nil,
       }
     end
 
@@ -83,5 +85,14 @@ module AmazonS3
         'thumbnails/'
       end
     end
+
+    def endpoint
+      @config[:endpoint]
+    end
+
+    def presigned_url_expiry
+      @config[:presigned_url_expiry]
+    end
+
   end
 end
