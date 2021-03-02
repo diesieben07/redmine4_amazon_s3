@@ -12,6 +12,9 @@ production:
   # Identifier for the region in which the bucket was created (required)
   region:
 
+  # Override the S3 Endpoint for non-AWS S3 storages (e.g. Wasabi or DigitalOcean Spaces)
+  # endpoint: "https://s3.eu-central-1.wasabisys.com"
+
   # Folder name inside bucket where uploaded files should be stored (e.g. 'attachments')
   # The default behavior is to store data in the bucket's root directory
   # attachments_folder:
@@ -19,7 +22,7 @@ production:
   # Folder where attachment thumbnails are stored
   # thumbnails_folder: thumbnails/
 
-  # endpoint: "https://s3.eu-central-1.wasabisys.com"
+  # set this to a number of ms to use presigned urls instead of public URLs
   # presigned_url_expiry: 3600
 
 development:
