@@ -48,7 +48,7 @@ module AmazonS3
       def object_url(filename, target_folder = @@config.attachments_folder)
         object = self.object(filename, target_folder)
         if @@config.presigned_url_expiry
-          object.presigned_url(:get, :expires_in => presigned_url_expiry)
+          object.presigned_url(:get, :expires_in => @@config.presigned_url_expiry)
         else
           object.public_url
         end
